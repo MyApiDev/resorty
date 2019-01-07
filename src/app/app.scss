@@ -1,0 +1,149 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+p span 
+{
+    display: block;
+    line-height: 10px
+}
+[scrollbar-y-auto] .scroll-content {
+    overflow-y: hidden !important;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.contact_1{
+    padding-top: 50px
+}
+.fonts-all
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+  
+  .fonts{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+.red {
+    background-color: rgba(220, 218, 81, 0);
+    margin-top: 10px
+}
+.green {
+    background-color: rgb(255, 255, 255);
+    border: think solid black
+}.blue {
+	background-color: rgb(255, 255, 255);
+}
+.fonts2{
+    font-size:  20px;
+    color: #556110;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-bottom: 10px
+   
+}
+
+    
+.jobran_1{
+     width: 35px;
+      
+  }
+  
+  .jobran_3{
+      color: #3406ff;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  }
+  /* prfile page*/
+
+  .profile_1{
+    padding-top: 5px;
+    font-size:  10px;
+    color: #556110;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-bottom: 10px
+  }
+ 
+  /*resPage*/
+      .resPage_1
+      {
+        width:65px;
+        height:43px;
+      }
+        .resPage_2
+        {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 97%; 
+        }
+        
+.resRow{
+  border-bottom: 1px solid #9ec905;
+  padding-bottom: 10px 
+
+}
+.resrow2{
+    width: 500px;
+}
+.line{
+    border-bottom: 1px solid #9ec905;
+    padding-bottom: 10px 
+}
+  .resImg{
+      width: 800px;
+      padding-left: 20px
+  }
+  .resserv{
+      padding-top: 10px
+  }
+  .serch_1{
+      padding-top: 20px;
+
+  }
+  .flight_1{
+      background-image: url('../assets/imgs/pic/filght2.jpg');
+      background-size: 1000px;
+      background-position-x: 20%;
+     
+
+  }
+  
+  
+.grid-bordered{
+   
+    .row{
+      border-style: solid;
+      border-width: 1px 1px 1px 1px;
+      border-color: #3406ff;
+    }
+    .col{
+      border-style: solid;
+      border-width: 2px 2px 2px 2px;
+      border-color: #fbff006e;
+      margin: 1px;
+      
+      
+    }
+    .widgit-size{
+        height: 75px;
+        padding-top: 5px
+    }
+    .fonts1{
+        font-size:  15px;
+        color: #90a516;
+        font-family: Verdana, Geneva, Tahoma, sans-serif
+    }
+    
+   
+}

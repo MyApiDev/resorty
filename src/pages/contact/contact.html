@@ -1,0 +1,40 @@
+<!--
+  Generated template for the ContactPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content scrollbar-y-auto >
+  <div  class="contact_1">
+    <ion-item>
+        <ion-label color="primary" stacked>الاسم كامل</ion-label>
+    <ion-input type="email" placeholder="الاسم الكامل"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+          <ion-label color="primary" stacked>وسيلة التواصل معك</ion-label>
+          <ion-input type="email" placeholder="الإيميل او رقم الجوال"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+          <ion-label color="primary" stacked>الوصف</ion-label>
+        <ion-textarea></ion-textarea>
+     
+      </ion-item>
+      <button ion-button block outline icon-end color="jobranC">
+          ارسال
+      </button>
+      <button ion-button block outline icon-end color="jobranC" (click)="GoBack()">
+          الرئيسية
+      </button>
+    </div>
+</ion-content>

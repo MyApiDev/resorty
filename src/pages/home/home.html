@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+    <ion-grid class="box red" align="center">
+        <ion-card>
+            <ion-item>
+                <ion-row>
+                    <ion-col>
+                        <ion-avatar item-start>
+                            <img src="/../assets/imgs/2018.jpg">
+                        </ion-avatar>
+                        <h2>Jobran Almalki</h2>
+
+                        <p>December 5, 2018</p>
+                    </ion-col>
+                </ion-row>
+
+            </ion-item>
+        </ion-card>
+
+        <ion-row class="grid-bordered">
+            <ion-col class="box green">
+                <img tappable src="/../assets/imgs/pic/4.png" class="widgit-size" (click)="Goflight()">
+                <h3 class="fonts1">حجوزات الطيران</h3>
+            </ion-col>
+            <ion-col class="box blue">
+                <img tappable src="/../assets/imgs/pic/9.png" class="widgit-size" (click)="GoSearch()">
+                <h3 class="fonts1">حجوزات الشاليهات</h3>
+            </ion-col>
+        </ion-row>
+        <ion-row class="grid-bordered">
+            <ion-col class="box green">
+                <img tappable src="/../assets/imgs/pic/6.png" class="widgit-size" (click)="GoSoon()">
+                <h3 class="fonts1">حجوزات المواصلات</h3>
+            </ion-col>
+            <ion-col class="box blue">
+                <img tappable src="/../assets/imgs/pic/8.png" class="widgit-size" (click)="GoSoon()">
+                <h3 class="fonts1">حجوزات المطاعم</h3>
+            </ion-col>
+        </ion-row>
+        <ion-row class="grid-bordered">
+            <ion-col class="box green">
+                <img tappable src="/../assets/imgs/pic/11.png" (click)="GoProfile()" class="widgit-size">
+                <h3 class="fonts1">ملفك الشخصي</h3>
+            </ion-col>
+            <ion-col class="box blue">
+                <img tappable src="/../assets/imgs/pic/10.png"  (click)="GoContact()"class="widgit-size">
+                <h3 class="fonts1">تواصل معنا</h3>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <button ion-button block outline icon-end color="jobranC" (click)="GoBack()">
+        تسجيل خروج
+        <ion-icon name="arrow-dropright"></ion-icon>
+    </button>
+</ion-content>

@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+
+    </ion-title>
+  </ion-navbar>
+
+  <ion-toolbar>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scrollbar-y-auto>
+  <ion-segment class="profile_1"[(ngModel)]="pet">
+    <ion-segment-button value="puppies">
+      الملف الشخصي
+    </ion-segment-button>
+    <ion-segment-button value="kittens">
+      حجوزاتي
+    </ion-segment-button>
+    <ion-segment-button value="ducklings">
+      الأمان
+    </ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="pet" class="profile_1">
+    <ion-list *ngSwitchCase="'puppies'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="/../assets/imgs/2018.jpg" (click)="GoHome()">
+        </ion-thumbnail>
+        <h2>صورتك الشخصية</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+        </ion-thumbnail>
+            <div class="row">جبران حسن يحي اليحيوي</div>
+            <div class="row">السعودية </div>
+            <div class="row">جازان</div>
+            <div class="row">jubran_1990@outlook.sa</div>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+        </ion-thumbnail>
+        <div class="row">0596176677</div>
+        <div class="row">22/12/2018</div>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'kittens'">
+        <ion-item>
+            <ion-thumbnail item-start>
+              <img src="/../assets/imgs/pic/15.png">
+            </ion-thumbnail>
+            <h2>لايوجد لديك حجوزات مسبقة</h2>
+          </ion-item>
+          <ion-item>
+            <ion-thumbnail item-start>
+            </ion-thumbnail>
+                <div class="row">ابدأ بالحجز الأن </div>
+
+          </ion-item>
+          <ion-item>
+            <ion-thumbnail item-start>
+            </ion-thumbnail>
+            <div class="row">قريباً</div>
+
+          </ion-item>
+        </ion-list>
+
+    <ion-list *ngSwitchCase="'ducklings'">
+        <ion-item>
+            <ion-thumbnail item-start>
+              <img src="/../assets/imgs/pic/26.png">
+            </ion-thumbnail>
+            <h2>كلمة المرور</h2>
+          </ion-item>
+          <ion-item>
+            <ion-thumbnail item-start>
+            </ion-thumbnail>
+                <div class="row">تغيير كلمة المرور</div>
+                <div class="row">تغيير الاسم الشخصي</div>
+                <div class="row">تغيير الصورة الشخصية</div>
+                <div class="row">تغيير رقم الجوال</div>
+          </ion-item>
+          <ion-item>
+            <ion-thumbnail item-start>
+            </ion-thumbnail>
+            <div class="row">الاتصال بالدعم الفني</div>
+            <div class="row">من نحن</div>
+          </ion-item>
+        </ion-list>
+    
+  </div>
+</ion-content>

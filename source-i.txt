@@ -1,0 +1,602 @@
+لعمل جدول او شبكة او ويدجت
+<div class = "row">
+        <div class = "col">col 1</div>
+        <div class = "col">col 2</div>
+        <div class = "col">col 3</div>
+        <div class = "col">col 4</div>
+        <div class = "col">col 5</div>
+     </div>
+     
+     <div class = "row">
+        <div class = "col">col 1</div>
+        <div class = "col">col 2</div>
+        <div class = "col">col 3</div>
+     </div>
+
+     او 
+
+
+
+    <ion-grid>
+        <ion-row>
+            <ion-col > <img src="/../assets/imgs/2018.jpg"></ion-col>
+            <ion-col > <img src="/../assets/imgs/2018.jpg"></ion-col>
+        </ion-row>
+      </ion-grid>
+---------------------------------------------------------------
+
+للانتقال الى صفحة اخرى بدون مشاكل اذا كان في اكثر من فنقشن
+GoHome(){
+    let toast = this.toastCtrl.create({
+      message: 'مرحبا بك مرة اخرى  ',
+      duration: 2000,
+      position: 'top'
+    });
+
+    toast.present(toast);
+  
+    this.newMethod();
+  }
+
+
+  private newMethod() {
+    this.navCtrl.setRoot(HomePage);
+  }
+
+  ##############################################################
+
+  
+to remove scroll bar 
+in html page
+<ion-content scrollbar-y-auto>
+</ion-content>
+in scss files
+
+[scrollbar-y-auto] .scroll-content {
+        overflow-y: hidden !important;
+      }
+###########################################################33
+
+
+Download and install node.js
+أي استعلام عن اصدار برنامج اكتب اسمه بعدين ماينص في
+node –v
+
+Install ionic 
+npm install -g ionic@latest
+
+ionic –v لمعرفة الاصدار
+Install cordova 
+npm install -g ionic cordova
+
+Create app 
+ionic start myNewProject 
+
+دخول في مجلد التطبيق
+cd ./myNewProject
+بعدين تشغيل
+ionic serve
+Ionic serve --lab
+
+للمزيد من الاوامر 
+ionic –help
+https://ionicframework.com/docs/cli/
+
+اذا حصلت معك مشكلة في مكتبة معينه احذفها من 
+App_module
+وارجع ثبتها من جديد
+ 
+in app.componnent 
+rootpage هي الصفحة الرئيسيه
+عند إضافة أي صفحة لابد ان اعرفها في صفحة 
+App.module
+tabs.ts
+tabs.html
+وفي اي صفحة ابغى ارسل او استقبل منها لازم اسوي لها استدعاء
+import {...} from '.....'
+
+
+ لتغيير ايقونات الأقسام
+https://ionicframework.com/docs/cli/
+Icons اختار
+
+لانشاء صفحة جديده
+نفتح الترمنال
+ونخش داخل مجلد التطبيق
+ونكتب
+Ionic g page NamePage 
+
+<ion-content padding >
+
+الاكواد والبرمجه تضعها داخل
+</ion-content>
+
+وضع زر للانتقال الى صفحة معينه
+in .html page
+Go to page that want but button there
+<button ion-button color="secondary">go home</button>
+Add function 
+<button ion-button color="secondary"(click)="goToMain()">go home</button>
+In .ts page
+Clear function نسوي تهئة للامر
+goToMin(){
+this.navCtrl.push(HomePage)
+}
+معناها هذا الامر اعمل له دفع الى الكلاس هوم بيج
+And import roating 
+import { HomePage } from '../home/home';
+
+
+اذا اردت الرجوع للخلف
+In .html page
+<button ion-button color="secondary"(click)=goback()>go home</button>
+In .ts page clear function
+This.navCtrl.pop();
+
+ 
+لاخذ معلومات من مكان ما
+In .ts page define string 
+Persons = {
+Name: 'jobran',
+age:28
+}
+In h.html page reguset information
+{{persons.name}} – {{persons.age}}
+ 
+Firebase 
+CREATE ACOUNT IN FIRBASE
+add firbase to your web application </>
+copy this code to your app.module down import>>>> with 
+CONST 
+  CONST config = {
+    apiKey: "",
+    authDomain:
+    databaseURL: 
+    projectId: 
+    storageBucket: 
+    messagingSenderId:
+  };
+AND ADD
+firebase.initializeApp(config)
+TO IMPORTS SECTION WITH REPLACIN 
+firebase.initializeApp(config)
+TO
+AngularFireModule.initializeApp(config)
+
+Go to treminal and cd to your project then install angularfire2
+Npm install firebase angularfire2 -- save
+Any problem close project and reopen it to load files and folders
+ 
+نسخة مضبوطة من الصفحات المشروع
+-----------------------------------------------------
+home.html
+#########################################
+<ion-header>
+  <ion-navbar>
+    <ion-title>البداية</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>المجموعة الثالثة</h2>
+
+    <ion-list>
+      <ion-item-sliding *ngFor = "let item of persons | async">
+        <ion-item>
+          <ion-avatar item-start>
+             <!-- or u can chose avatar instat of thumbnail -->
+              <img src="assets/imgs/person.png">
+          </ion-avatar>
+          <h2>  {{item.dept }} </h2>
+          <p>{{item.name}} 
+             {{item.lname }}--{{item.age}}</p>
+          <ion-note>   {{item.key}}</ion-note>
+            
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="primary"
+          (click)="updateItem(item.key,item.name,item.lname,item.age,item.dept)">
+            <ion-icon name="text"></ion-icon>
+            Edit
+          </button>
+          <button ion-button color="secondary">
+            
+            <ion-icon ios="ios-albums" md="md-albums"></ion-icon>
+            NOTE
+          </button>
+        </ion-item-options>
+        <ion-item-options side="right">
+          <button ion-button color="danger" (click)="deleteItem(item.key)">
+            <ion-icon ios="ios-trash" md="md-trash" ></ion-icon>            DELETE
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+</ion-content>
+#####################################################
+home.ts 
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+/*import { AngularFireDatabase , FirebaseListObservable } from "angularfire2/database";*/
+import { AngularFireDatabase , AngularFireList} from '@angular/fire/database';
+import { Observable } from 'rxjs';
+import {FirebaseListObservable} from 'angularfire';
+import { map } from 'rxjs/operators';
+import { EditPersonPage } from '../edit-person/edit-person';
+
+@Component({
+  selector: 'page-home',
+  templateUrl: 'home.html'
+})  
+export class HomePage {
+  
+    
+  itemsRef: AngularFireList<any>;
+  persons : Observable<any[]>;
+  
+
+  constructor(public navCtrl: NavController , public afDB: AngularFireDatabase ) 
+  {
+   this.itemsRef = afDB.list('persons');
+   this.persons = this.itemsRef.snapshotChanges().pipe(
+    map(changes => 
+      changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+    )
+  );
+  }
+  
+  deleteItem(key: string) { 
+    this.itemsRef.remove(key);
+  }
+  updateItem(id,name,lname,age,dept){
+  this.navCtrl.push(EditPersonPage,{
+    key : id ,
+    name : name ,
+    lname : lname ,
+    age : age ,
+    dept : dept
+  });
+
+
+
+
+
+
+  }
+  private newMethod() {
+    return "jobran";
+  }
+  
+}
+###################################################
+about.html 
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+إضافة عناصر
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating> الاسم الأول </ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input >
+    </ion-item>
+    <ion-item>
+      <ion-label floating>أسم العائلة</ion-label>
+      <ion-input type="text"[(ngModel)]="lname" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>العمر</ion-label>
+      <ion-input type="text" [(ngModel)]="age"></ion-input >
+    </ion-item> 
+    <ion-item>
+      <ion-label floating>القسم </ion-label>
+      <ion-input type="text" [(ngModel)]="dept"></ion-input >
+    </ion-item>
+    <button ion-button icon-end color="blue" (click)="createPerson(name,lname,age,dept)">
+      إضافة جديد 
+      <ion-icon name="ios-add-circle"></ion-icon>
+    </button>
+  </ion-list>
+</ion-content>
+
+#########################################################
+about.ts 
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+import {firebaselistObservable} from 'angularfire';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators'
+import { HomePage } from '../home/home';
+
+
+@Component({
+  selector: 'page-about',
+  templateUrl: 'about.html'
+})
+export class AboutPage {
+
+  peopleList : firebaselistObservable<any>
+   
+  itemsRef: AngularFireList<any>;
+  persons  : Observable<any[]>;
+
+
+  constructor(public navCtrl: NavController , public db: AngularFireDatabase) {
+
+    this.peopleList = db.list('persons');
+    }
+    
+
+  createPerson(name,lname,age,dept){
+    this.peopleList.push({
+      name : name,
+      lname : lname,
+      age : age,
+      dept : dept,
+    }).then(newPerson =>{
+      this.navCtrl.push(HomePage);
+    },error=>{console.log(error);});
+
+
+  }
+
+}
+#####################################################
+edit-person.html 
+
+<!--
+  Generated template for the EditPersonPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>تعديل البيانات</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating> الاسم الأول </ion-label>
+      <ion-input type="text" [(ngModel)]="item.name"></ion-input >
+    </ion-item>
+    <ion-item>
+      <ion-label floating>أسم العائلة</ion-label>
+      <ion-input type="text"[(ngModel)]="item.lname" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>العمر</ion-label>
+      <ion-input type="text" [(ngModel)]="item.age"></ion-input >
+    </ion-item> 
+    <ion-item>
+      <ion-label floating>القسم </ion-label>
+      <ion-input type="text" [(ngModel)]="item.dept"></ion-input >
+    </ion-item>
+    <button ion-button icon-end color="danger"(click)="updateitem(item.key,[item.name,item.lname,item.age,item.dept])">
+       تحديث البيانات 
+      <ion-icon name="ios-add-circle"></ion-icon>
+    </button>
+  </ion-list>
+</ion-content>
+
+##################################
+edit-person.ts 
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {HomePage} from '../home/home';
+import { AngularFireDatabase , AngularFireList} from '@angular/fire/database';
+import { Observable } from 'rxjs';
+import {FirebaseListObservable} from 'angularfire'
+
+
+/**
+ * Generated class for the EditPersonPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
+@Component({
+  selector: 'page-edit-person',
+  templateUrl: 'edit-person.html',
+})
+export class EditPersonPage {
+
+  items : FirebaseListObservable<any>;
+  item = {
+    id : '',
+    name : '',
+    lname : '',
+    age :  '',
+    dept : ''
+
+  }
+
+  constructor(public navCtrl: NavController, public navParams: NavParams , public db :AngularFireDatabase)
+  
+  {
+    this.items = db.list('persons');
+    this.item.id    = this.navParams.get('key')
+    this.item.name  = this.navParams.get('name')
+    this.item.lname = this.navParams.get('lname')
+    this.item.age   = this.navParams.get('age')
+    this.item.dept  = this.navParams.get('dept')
+  }
+
+  
+ 
+
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad EditPersonPage');
+  }
+updateitem(id,name,lname,age,dept){
+  this.items.update(this.item.id, {
+    name : this.item.name  ,
+   lname : this.item.lname ,
+   age : this.item.age   ,
+   dept : this.item.dept  ,
+  }) .then(uitem=>{this.navCtrl.pop();},error=>{console.log(error);});
+
+  
+
+}
+}
+###################################################3
+tabs.html 
+<ion-tabs>
+  <ion-tab [root]="tab1Root" tabTitle="البداية  " tabIcon="ios-people"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="إضافة " tabIcon="ios-person-add"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="تقرير" tabIcon="contacts"></ion-tab>
+</ion-tabs>
+###################################################
+tabs.ts 
+import { Component } from '@angular/core';
+import { AboutPage } from '../about/about';
+import { ContactPage } from '../contact/contact';
+import { HomePage } from '../home/home';
+@Component({
+  templateUrl: 'tabs.html'
+})
+export class TabsPage {
+
+  tab1Root = HomePage;
+  tab2Root = AboutPage;
+  tab3Root = ContactPage;
+  constructor() {
+
+  }
+}
+###################################################
+app.module.ts 
+import { NgModule, ErrorHandler } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { MyApp } from './app.component';
+import { AboutPage } from '../pages/about/about';
+import { ContactPage } from '../pages/contact/contact';
+import { HomePage } from '../pages/home/home';
+import { TabsPage } from '../pages/tabs/tabs'; 
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+/*import { AngularFireModule} from 'angularfire2';*/
+import {NavController} from 'ionic-angular';
+/*import { AngularFireDatabaseModule } from "angularfire2/database"; */
+import { Observable } from 'rxjs/Rx';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { EditPersonPage} from '../pages/edit-person/edit-person'
+
+
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBwKRDi26MWig3_EtdiHaqBmW_6vqrwDbo",
+    authDomain: "ionicdb-e674e.firebaseapp.com",
+    databaseURL: "https://ionicdb-e674e.firebaseio.com",
+    storageBucket: "ionicdb-e674e.appspot.com",
+    messagingSenderId: "1056945956433"
+};
+@NgModule({
+  declarations: [
+    MyApp,
+    AboutPage,
+    ContactPage,
+    HomePage,
+    TabsPage,
+    EditPersonPage,
+
+  ],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
+    
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    MyApp,
+    AboutPage,
+    ContactPage,
+    HomePage,
+    TabsPage,
+    EditPersonPage
+  ],
+  providers: [
+    StatusBar,
+    SplashScreen,
+    AngularFireDatabase,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
+})
+export class AppModule {}
+  #####################################################
+
+  package.json 
+
+
+  {
+  "name": "MyNewProject",
+  "version": "0.0.1",
+  "author": "Ionic Framework",
+  "homepage": "http://ionicframework.com/",
+  "private": true,
+  "scripts": {
+    "start": "ionic-app-scripts serve",
+    "clean": "ionic-app-scripts clean",
+    "build": "ionic-app-scripts build",
+    "lint": "ionic-app-scripts lint"
+  },
+  "dependencies": {
+    "@angular/animations": "5.2.11",
+    "@angular/common": "^6.0.0",
+    "@angular/compiler": "5.2.11",
+    "@angular/compiler-cli": "5.2.11",
+    "@angular/core": "5.2.11",
+    "@angular/fire": "^5.0.2",
+    "@angular/forms": "5.2.11",
+    "@angular/http": "5.2.11",
+    "@angular/platform-browser": "5.2.11",
+    "@angular/platform-browser-dynamic": "5.2.11",
+    "@ionic-native/core": "~4.12.0",
+    "@ionic-native/splash-screen": "~4.12.0",
+    "@ionic-native/status-bar": "~4.12.0",
+    "@ionic/pro": "2.0.3",
+    "@ionic/storage": "2.1.3",
+    "angular": "^1.7.4",
+    "angular2-moment": "^1.9.0",
+    "angularfire": "^2.3.0",
+    "angularfire2": "^5.0.0-rc.4",
+    "firebase": "^4.13.1",
+    "ionic-angular": "3.9.2",
+    "ionicons": "3.0.0",
+    "rxjs": "^6.3.3",
+    "rxjs-compat": "^6.3.3",
+    "sw-toolbox": "3.6.0",
+    "zone.js": "0.8.26"
+  },
+  "devDependencies": {
+    "@ionic/app-scripts": "3.2.0",
+    "@ionic/lab": "1.0.9",
+    "typescript": "~2.6.2"
+  },
+  "description": "An Ionic project"
+}
+########################################################33

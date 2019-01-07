@@ -1,0 +1,34 @@
+
+<ion-header>
+
+  <ion-navbar >
+          <h1  class="title"  style="font-weight: bold; font-size: 20px; color: rgb(28, 53, 14);" absolute-drag></h1>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  scrollbar-y-auto class="bg-image">
+  <ion-list >
+<ion-item id="rounded">
+    <ion-label class="jobran2"><h1>تسجيل جديد </h1></ion-label>
+</ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="اسمك او اسم الكيان "  dir="rtl" #username></ion-input >
+    </ion-item>
+   
+    <ion-item>
+      <ion-input type="text"  placeholder="البريد الالكتروني"  dir="rtl" #email></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text"  placeholder="كلمة المرور"   dir="rtl" #password></ion-input>
+    </ion-item>
+
+    <button ion-button block outline icon-end color="jobranC"  (click)="GoHome()">
+      تسجيل  
+      <ion-icon name="arrow-dropright"></ion-icon>
+    </button>
+    <ion-label (click)="GoHome();" class="jobran3" color="jobranC">لديك حساب بالفعل</ion-label>
+  </ion-list>
+</ion-content>

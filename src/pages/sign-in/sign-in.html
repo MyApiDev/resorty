@@ -1,0 +1,34 @@
+<!--
+  Generated template for the SignInPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  scrollbar-y-auto class="bg-image">
+  <ion-list >
+<ion-item id="rounded">
+    <ion-label fixed class="jobran2"><h1> دخول </h1></ion-label>
+</ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="البريد الالكتروني " [(ngModel)]="name" dir="rtl"></ion-input >
+    </ion-item>
+    <ion-item>
+     
+      <ion-input type="text" type="password"  placeholder="كلمة المرور" [(ngModel)]="lname" dir="rtl"></ion-input>
+    </ion-item>
+
+    <button ion-button block outline icon-end color="jobranC"  (click)="GoHome(('top'))">
+      التالي 
+      <ion-icon name="arrow-dropright"></ion-icon>
+    </button>
+    <ion-label (click)="GoLogin();" class="jobran3" color="jobranC">ليس لديك حساب,انظم معنا</ion-label>
+  </ion-list>
+</ion-content>

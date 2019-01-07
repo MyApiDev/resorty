@@ -1,0 +1,46 @@
+page-sign-in {
+    [scrollbar-y-auto] .scroll-content {
+        overflow-y: hidden !important;
+      }
+      .head{
+        background-color:  rgb(22, 61, 145);
+        padding-bottom: 40px;
+        // background-image: url("http://i66.tinypic.com/v6htsz.jpg");
+        background-size: cover;}
+        #rounded {
+          width: 100%;
+          height: 100px;
+          -moz-border-radius: 50px;
+          -webkit-border-radius: 50px;
+          border-radius: 10px;
+          margin-bottom: 10px;  
+      }
+  
+      #container {
+          width: 300px; 
+          margin-left:auto; 
+          margin-right: auto; 
+      }
+      .jobran1 {
+        block-size: 50px;
+        margin-top: 50px
+     }
+     .jobran2 {
+       color: rgb(13, 117, 22);
+       
+      
+     }
+    
+    .bg-image{
+      background-image: url('/../assets/imgs/1222.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-position-y: 300px;
+      background-position-x: 30px;
+      background-size: contain;
+      .jobran3{
+        padding-right: 10px;
+        padding-top: 20px
+      }
+}
+}

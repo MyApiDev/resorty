@@ -1,0 +1,126 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <ion-card>
+    <ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-avatar item-start>
+            <img src="/../assets/imgs/pic/15.png">
+          </ion-avatar>
+        </ion-col>
+        <ion-col>
+          <h2>استراحة الرومنسية</h2>
+          <p>Add in December 5, 2018 </p>
+        </ion-col>
+        <ion-col>
+          <ion-img src="/../assets/imgs/res/2.jpg" class="resPage_1"></ion-img><!-- verifiy img-->
+        </ion-col>
+      </ion-row>
+
+
+    </ion-item>
+    <img src="/../assets/imgs/res/2.jpg" class="resPage_2">
+    <ion-card-content>
+      <ion-slides class="image-slider" loop="false" slidesPerView="4">
+        <ion-slide *ngFor="let img of images">
+          <img src="/../assets/imgs/res/{{img}}" class="thumb-img" imageViewer>
+        </ion-slide>
+      </ion-slides>
+
+      <div class="row">
+        <h2>الوصف</h2>
+      </div>
+      <div class="resRow">
+        <p>يقع الشاليه في منتصف قلب جيزان ويبعد عن البحر الاحمر مسافة 1000 كيلومتر</p>
+      </div>
+
+      <div class="row">الخدمات</div>
+      <div class="row">
+        <div class="col"><img src="/../assets/imgs/icons/barbecue.png">الشواء</div>
+        <div class="col"><img src="/../assets/imgs/icons/bathtub.png">بانيو</div>
+        <div class="col"><img src="/../assets/imgs/icons/football.png">ملاعب</div>
+        <div class="col"><img src="/../assets/imgs/icons/wifi.png">واي فاي</div>
+        <div class="col"><img src="/../assets/imgs/icons/swimming.png">مسبح</div>
+      </div>
+      <ion-item class="line"></ion-item>
+      <div class="row">التقييم</div>
+      <div class="row">
+          <ionic3-star-rating 
+        activeIcon = "ios-star"
+        defaultIcon = "ios-star-outline"
+        activeColor = "#488aff" 
+        defaultColor = "#f4f4f4"
+        readonly="false"
+        [rating]="3">
+    </ionic3-star-rating>
+      
+        <!-- <div class="col"><img src="/../assets/imgs/icons/star.png"></div>
+        <div class="col"><img src="/../assets/imgs/icons/star.png"></div>
+        <div class="col"><img src="/../assets/imgs/icons/star.png"></div>
+        <div class="col"><img src="/../assets/imgs/icons/star.png"></div>
+        <div class="col"><img src="/../assets/imgs/icons/no-star.png"></div> -->
+      </div>
+      <ion-item class="line"></ion-item>
+      <div class="row">التواصل</div>
+      <div class="row">
+        <div class="col"><img style="width:40px" src="/../assets/imgs/icons/call.png">
+          <p>0596176677</p>
+        </div>
+        <div class="col"><img style="width:40px" src="/../assets/imgs/icons/route.png">
+          <p>Gizan-AlrYan</p>
+        </div>
+      </div>
+      <ion-item class="line">
+      </ion-item>
+      <div class="row">التعليقات</div>
+      <ion-row>
+        <ion-col class="resImg">
+          <img src="/../assets/imgs/2018.jpg">
+        </ion-col>
+        <ion-col>
+          <p>شاليه جميل ومناسب للاطفال ويوجد حارس محترم ومدرب سباحة للاطفال</p>
+        </ion-col>
+        <ion-item class="line"></ion-item>
+        <ion-col class="resImg">
+          <img src="/../assets/imgs/pic/15.png">
+        </ion-col>
+        <ion-col>
+          <p>سعدنا بمروركم الجميل وتعليقكم الرائع</p>
+        </ion-col>
+      </ion-row>
+
+
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col (tap)="tapEvent($event)">
+        <button ion-button icon-start clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>{{tap}} Likes</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="text"></ion-icon>
+          <div (click)="GoHome2()">0 Comments</div>
+        </button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+          11h ago
+        </ion-note>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+</ion-content>
